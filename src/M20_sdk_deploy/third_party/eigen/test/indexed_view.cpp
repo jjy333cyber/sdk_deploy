@@ -447,7 +447,7 @@ void check_indexed_view() {
 
   // Check compilation of varying integer types as index types:
   Index i = n / 2;
-  short i_short(i);
+  short i_short = static_cast<short>(i);
   std::size_t i_sizet(i);
   VERIFY_IS_EQUAL(a(i), a.coeff(i_short));
   VERIFY_IS_EQUAL(a(i), a.coeff(i_sizet));
@@ -790,6 +790,7 @@ void check_tutorial_examples() {
     VERIFY_IS_EQUAL(int(slice1.SizeAtCompileTime), 6);
     VERIFY_IS_EQUAL(int(slice2.SizeAtCompileTime), 6);
     auto slice3 = A(all, seq(fix<0>, last, fix<2>));
+    TEST_SET_BUT_UNUSED_VARIABLE(slice3)
     VERIFY_IS_EQUAL(int(slice3.RowsAtCompileTime), kRows);
     VERIFY_IS_EQUAL(int(slice3.ColsAtCompileTime), (kCols + 1) / 2);
   }
@@ -812,7 +813,7 @@ void check_tutorial_examples() {
   {
     std::vector<int> ind{4, 2, 5, 5, 3};
     auto slice1 = A(all, ind);
-    for (int i = 0; i < ind.size(); ++i) {
+    for (size_t i = 0; i < ind.size(); ++i) {
       VERIFY_IS_EQUAL(slice1.col(i), A.col(ind[i]));
     }
 
@@ -839,11 +840,21 @@ void check_tutorial_examples() {
   }
 }
 
+void check_aliasing() {
+  Eigen::Vector<float, 5> z = {0.0f, 1.1f, 2.2f, 3.3f, 4.4f};
+  std::vector<int> left_indices = {0, 1, 3, 4};
+  std::vector<int> right_indices = {1, 3, 4, 0};
+  z(left_indices) = z(right_indices);
+  Eigen::Vector<float, 5> expected = {1.1f, 3.3f, 2.2f, 4.4f, 0.0f};
+  VERIFY_IS_EQUAL(z, expected);
+}
+
 EIGEN_DECLARE_TEST(indexed_view) {
   for (int i = 0; i < g_repeat; i++) {
     CALL_SUBTEST_1(check_indexed_view());
   }
   CALL_SUBTEST_1(check_tutorial_examples());
+  CALL_SUBTEST_1(check_aliasing());
 
   // static checks of some internals:
   STATIC_CHECK((internal::is_valid_index_type<int>::value));
