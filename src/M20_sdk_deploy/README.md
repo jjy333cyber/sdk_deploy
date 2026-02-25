@@ -110,7 +110,8 @@ python3 src/M20_sdk_deploy/interface/robot/simulation/mujoco_simulation_ros2.py
 This process is almost identical to simulation-simulation. You only need to add the step of connecting to Wi-Fi to transfer data, and then modify the compilation instructions.Real-robot control is divided into keyboard mode and gamepad control mode. You need to modify the RemoteCommandType parameter in the main function to select the desired mode.
 
 
-Please first use the OTA upgrade function in the handle settings to upgrade the hardware to version 1.1.7.
+**Please first use the OTA upgrade function in the handle settings to upgrade the hardware to version 1.1.8. We require a sdk authentication code to activate the sdk mode. Please contact our technical support team to get this unique code for each robot.**
+
 
 ```bash
 
