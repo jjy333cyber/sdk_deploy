@@ -143,7 +143,6 @@ ros2 run m20_sdk_deploy rl_deploy
 ```
 
 ### ⌨️ Keyboard Control
-*(Note: When the robot dog stands up, it may become stuck due to self-collision in the simulation. This is not a bug; please try again.)*
 - z： default position
 - c： rl control default position
 - x： lie down
@@ -152,6 +151,8 @@ ros2 run m20_sdk_deploy rl_deploy
 
 ### 🎮 Gamepad Control
 *(Note: When using the gamepad control function, please ensure that the Gamepad APP version is V1.5.11 or higher.)*
+![2838b054246d4700247b36207243258f](https://github.com/user-attachments/assets/ed4e8340-c1fe-4202-916a-84e80e537b7f)
+
 - L1： default position
 - L2： rl control default position
 - R1： lie down
