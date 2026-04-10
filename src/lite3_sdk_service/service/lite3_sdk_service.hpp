@@ -46,6 +46,7 @@ private:
 
     pid_t lite3_pid_;
     rclcpp::Client<drdds::srv::StdSrvInt32>::SharedPtr client_;
+    rclcpp::Client<drdds::srv::StdSrvInt32>::SharedPtr estop_client_;
     int udp_sockfd_;
     int udp_port_;
 
@@ -111,6 +112,7 @@ public:
     void Initialize(rclcpp::Node::SharedPtr node) override {
         node_ = node;
         client_ = node_->create_client<drdds::srv::StdSrvInt32>("/SDK_MODE");
+        estop_client_ = node_->create_client<drdds::srv::StdSrvInt32>("/EMERGENCY_STOP");
         RCLCPP_INFO(get_logger(), "Lite3SdkService initialized");
     }
 
@@ -342,6 +344,47 @@ public:
         }
     }
 
+    bool SendEmergencyStop() {
+        if (!estop_client_) {
+            RCLCPP_ERROR(get_logger(), "Emergency stop client not initialized");
+            return false;
+        }
+
+        using namespace std::chrono_literals;
+        if (!estop_client_->wait_for_service(1s)) {
+            RCLCPP_ERROR(get_logger(), "Service /EMERGENCY_STOP not available");
+            return false;
+        }
+
+        auto request = std::make_shared<drdds::srv::StdSrvInt32::Request>();
+        request->command = 0;
+        auto future = estop_client_->async_send_request(request);
+
+        auto timeout = std::chrono::milliseconds(SERVICE_TIMEOUT_MS);
+        auto start_time = std::chrono::steady_clock::now();
+        auto check_interval = std::chrono::milliseconds(50);
+
+        while (true) {
+            if (node_) {
+                rclcpp::spin_some(node_);
+            }
+            auto status = future.wait_for(check_interval);
+            if (status == std::future_status::ready) {
+                try {
+                    auto response = future.get();
+                    return response && response->result == 0;
+                } catch (const std::exception& e) {
+                    RCLCPP_ERROR(get_logger(), "Exception getting /EMERGENCY_STOP response: %s", e.what());
+                    return false;
+                }
+            }
+            if (std::chrono::steady_clock::now() - start_time >= timeout) {
+                RCLCPP_ERROR(get_logger(), "/EMERGENCY_STOP service call timed out");
+                return false;
+            }
+        }
+    }
+
     std::string ProcessCommand(const std::string& cmd) override {
         // Validate command length
         if (cmd.length() > MAX_CMD_LENGTH) {
@@ -374,6 +417,13 @@ public:
         if (lower_cmd == "off") {
             bool ok = StopNode();
             RCLCPP_INFO(get_logger(), "Command 'off' result: %s", ok ? "success" : "failure");
+            return ok ? "success" : "failure";
+        }
+
+        // Handle "estop" command: send 0x21010C0E emergency stop to robot via /EMERGENCY_STOP service
+        if (lower_cmd == "estop") {
+            bool ok = SendEmergencyStop();
+            RCLCPP_WARN(get_logger(), "Command 'estop' result: %s", ok ? "success" : "failure");
             return ok ? "success" : "failure";
         }
 

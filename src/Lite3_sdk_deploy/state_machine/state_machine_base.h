@@ -13,6 +13,7 @@
 
 #include "state_base.h"
 #include "safe_controller.hpp"
+#include "drdds/msg/std_msg_int32.hpp"
 
 class TimeTool {
 private:
@@ -124,10 +125,10 @@ public:
 
                 current_controller_->Run();
 
-                if (current_controller_->LoseControlJudge()){
+                if (emergency_stop_requested_.exchange(false) ||
+                    current_controller_->LoseControlJudge()) {
                     next_state_name_ = StateName::kJointDamping;
-                } 
-                else {
+                } else {
                     next_state_name_ = current_controller_->GetNextStateName();
                 }
 
@@ -163,5 +164,19 @@ public:
     StateName current_state_name_, next_state_name_;
 
     std::thread run_thread_;
+
+    // 急停信号：由 lite3_transfer 进程发布 /EMERGENCY_STOP_SIGNAL 触发
+    std::atomic<bool> emergency_stop_requested_{false};
+    rclcpp::Subscription<drdds::msg::StdMsgInt32>::SharedPtr estop_signal_sub_;
+
+    // 在 ri_ptr_ 初始化后调用，订阅跨进程急停信号
+    void InitEmergencyStopListener() {
+        estop_signal_sub_ = ri_ptr_->get_node()->create_subscription<drdds::msg::StdMsgInt32>(
+            "/EMERGENCY_STOP_SIGNAL", 1,
+            [this](const drdds::msg::StdMsgInt32::SharedPtr) {
+                emergency_stop_requested_.store(true);
+            }
+        );
+    }
 };
 

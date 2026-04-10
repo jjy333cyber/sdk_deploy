@@ -84,6 +84,9 @@ public:
         uc_ptr_->Start();
         sc_ptr_->Start();
         current_controller_->OnEnter();
+
+        // 订阅来自 lite3_transfer 的急停信号，触发后切换至 JointDamping 状态
+        InitEmergencyStopListener();
     }
 
 
