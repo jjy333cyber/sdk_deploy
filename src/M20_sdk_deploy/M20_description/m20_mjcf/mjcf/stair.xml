@@ -10,102 +10,116 @@
 
         <geom name="start_pad" class="terrain" pos="0.25 0 0" size="1.25 1.5 0.05" rgba="0.36 0.36 0.36 1"/>
 
-        <!-- pyramid_stairs, taller -->
-        <geom name="pyramid_stairs_1" class="terrain" pos="1.75 0 0.045" size="0.25 1.5 0.045" rgba="0.52 0.52 0.52 1"/>
-        <geom name="pyramid_stairs_2" class="terrain" pos="2.25 0 0.09" size="0.25 1.5 0.09" rgba="0.55 0.55 0.55 1"/>
-        <geom name="pyramid_stairs_3" class="terrain" pos="2.75 0 0.135" size="0.25 1.5 0.135" rgba="0.58 0.58 0.58 1"/>
-        <geom name="pyramid_stairs_4" class="terrain" pos="3.25 0 0.18" size="0.25 1.5 0.18" rgba="0.61 0.61 0.61 1"/>
-        <geom name="pyramid_stairs_5" class="terrain" pos="3.75 0 0.18" size="0.25 1.5 0.18" rgba="0.61 0.61 0.61 1"/>
-        <geom name="pyramid_stairs_6" class="terrain" pos="4.25 0 0.135" size="0.25 1.5 0.135" rgba="0.58 0.58 0.58 1"/>
-        <geom name="pyramid_stairs_7" class="terrain" pos="4.75 0 0.09" size="0.25 1.5 0.09" rgba="0.55 0.55 0.55 1"/>
-        <geom name="pyramid_stairs_8" class="terrain" pos="5.25 0 0.045" size="0.25 1.5 0.045" rgba="0.52 0.52 0.52 1"/>
+        <!-- single stairs: up 7 and down 7, 0.2 height difference -->
+        <geom name="pyramid_stairs_1" class="terrain" pos="1.75 0 0.1" size="0.25 1.5 0.1" rgba="0.52 0.52 0.52 1"/>
+        <geom name="pyramid_stairs_2" class="terrain" pos="2.25 0 0.2" size="0.25 1.5 0.2" rgba="0.54 0.54 0.54 1"/>
+        <geom name="pyramid_stairs_3" class="terrain" pos="2.75 0 0.3" size="0.25 1.5 0.3" rgba="0.56 0.56 0.56 1"/>
+        <geom name="pyramid_stairs_4" class="terrain" pos="3.25 0 0.4" size="0.25 1.5 0.4" rgba="0.58 0.58 0.58 1"/>
+        <geom name="pyramid_stairs_5" class="terrain" pos="3.75 0 0.5" size="0.25 1.5 0.5" rgba="0.60 0.60 0.60 1"/>
+        <geom name="pyramid_stairs_6" class="terrain" pos="4.25 0 0.6" size="0.25 1.5 0.6" rgba="0.62 0.62 0.62 1"/>
+        <geom name="pyramid_stairs_7" class="terrain" pos="4.75 0 0.7" size="0.25 1.5 0.7" rgba="0.64 0.64 0.64 1"/>
+        <geom name="pyramid_stairs_8" class="terrain" pos="5.25 0 0.7" size="0.25 1.5 0.7" rgba="0.64 0.64 0.64 1"/>
+        <geom name="pyramid_stairs_9" class="terrain" pos="5.75 0 0.6" size="0.25 1.5 0.6" rgba="0.62 0.62 0.62 1"/>
+        <geom name="pyramid_stairs_10" class="terrain" pos="6.25 0 0.5" size="0.25 1.5 0.5" rgba="0.60 0.60 0.60 1"/>
+        <geom name="pyramid_stairs_11" class="terrain" pos="6.75 0 0.4" size="0.25 1.5 0.4" rgba="0.58 0.58 0.58 1"/>
+        <geom name="pyramid_stairs_12" class="terrain" pos="7.25 0 0.3" size="0.25 1.5 0.3" rgba="0.56 0.56 0.56 1"/>
+        <geom name="pyramid_stairs_13" class="terrain" pos="7.75 0 0.2" size="0.25 1.5 0.2" rgba="0.54 0.54 0.54 1"/>
+        <geom name="pyramid_stairs_14" class="terrain" pos="8.25 0 0.1" size="0.25 1.5 0.1" rgba="0.52 0.52 0.52 1"/>
+        <geom name="gap_stairs_boxes" class="terrain" pos="8.7 0 0" size="0.20 1.5 0.05" rgba="0.42 0.42 0.42 1"/>
 
-        <!-- pyramid_stairs_inv, taller and slightly narrower -->
-        <geom name="pyramid_stairs_inv_1" class="terrain" pos="5.75 0.12 0.05" size="0.25 1.35 0.05" rgba="0.48 0.48 0.48 1"/>
-        <geom name="pyramid_stairs_inv_2" class="terrain" pos="6.25 0.08 0.10" size="0.25 1.28 0.10" rgba="0.45 0.45 0.45 1"/>
-        <geom name="pyramid_stairs_inv_3" class="terrain" pos="6.75 0.04 0.14" size="0.25 1.20 0.14" rgba="0.42 0.42 0.42 1"/>
-        <geom name="pyramid_stairs_inv_4" class="terrain" pos="7.25 0 0.17" size="0.25 1.12 0.17" rgba="0.39 0.39 0.39 1"/>
-        <geom name="pyramid_stairs_inv_5" class="terrain" pos="7.75 0 0.17" size="0.25 1.12 0.17" rgba="0.39 0.39 0.39 1"/>
-        <geom name="pyramid_stairs_inv_6" class="terrain" pos="8.25 -0.04 0.14" size="0.25 1.20 0.14" rgba="0.42 0.42 0.42 1"/>
-        <geom name="pyramid_stairs_inv_7" class="terrain" pos="8.75 -0.08 0.10" size="0.25 1.28 0.10" rgba="0.45 0.45 0.45 1"/>
-        <geom name="pyramid_stairs_inv_8" class="terrain" pos="9.25 -0.12 0.05" size="0.25 1.35 0.05" rgba="0.48 0.48 0.48 1"/>
+        <!-- boxes, kept moderate to avoid getting stuck -->
+        <geom name="boxes_floor" class="terrain" pos="10.9 0 0" size="2.0 1.5 0.05" rgba="0.40 0.40 0.40 1"/>
+        <geom name="boxes_1" class="terrain" pos="9.20 -0.90 0.025" size="0.12 0.12 0.025" rgba="0.70 0.58 0.42 1"/>
+        <geom name="boxes_2" class="terrain" pos="9.42 -0.28 0.04" size="0.14 0.16 0.04" rgba="0.72 0.59 0.43 1"/>
+        <geom name="boxes_3" class="terrain" pos="9.60 0.52 0.05" size="0.14 0.14 0.05" rgba="0.74 0.61 0.45 1"/>
+        <geom name="boxes_4" class="terrain" pos="9.82 0.92 0.03" size="0.12 0.12 0.03" rgba="0.75 0.62 0.46 1"/>
+        <geom name="boxes_5" class="terrain" pos="9.98 -0.72 0.06" size="0.16 0.18 0.06" rgba="0.76 0.62 0.46 1"/>
+        <geom name="boxes_6" class="terrain" pos="10.18 0.05 0.075" size="0.18 0.20 0.075" rgba="0.78 0.64 0.48 1"/>
+        <geom name="boxes_7" class="terrain" pos="10.36 0.76 0.045" size="0.14 0.14 0.045" rgba="0.79 0.65 0.49 1"/>
+        <geom name="boxes_8" class="terrain" pos="10.58 -0.45 0.085" size="0.16 0.18 0.085" rgba="0.80 0.65 0.49 1"/>
+        <geom name="boxes_9" class="terrain" pos="10.78 0.98 0.035" size="0.12 0.12 0.035" rgba="0.81 0.66 0.50 1"/>
+        <geom name="boxes_10" class="terrain" pos="10.98 -0.94 0.05" size="0.12 0.12 0.05" rgba="0.82 0.66 0.50 1"/>
+        <geom name="boxes_11" class="terrain" pos="11.16 0.32 0.095" size="0.18 0.22 0.095" rgba="0.83 0.67 0.51 1"/>
+        <geom name="boxes_12" class="terrain" pos="11.34 -0.08 0.055" size="0.14 0.18 0.055" rgba="0.84 0.68 0.52 1"/>
+        <geom name="boxes_13" class="terrain" pos="11.54 0.84 0.08" size="0.16 0.16 0.08" rgba="0.82 0.66 0.50 1"/>
+        <geom name="boxes_14" class="terrain" pos="11.74 -0.66 0.09" size="0.18 0.20 0.09" rgba="0.80 0.65 0.49 1"/>
+        <geom name="boxes_15" class="terrain" pos="11.96 0.58 0.05" size="0.14 0.14 0.05" rgba="0.78 0.64 0.48 1"/>
+        <geom name="boxes_16" class="terrain" pos="12.14 -0.34 0.07" size="0.16 0.18 0.07" rgba="0.76 0.62 0.46 1"/>
+        <geom name="boxes_17" class="terrain" pos="12.34 0.06 0.085" size="0.18 0.22 0.085" rgba="0.74 0.61 0.45 1"/>
+        <geom name="boxes_18" class="terrain" pos="12.58 0.88 0.04" size="0.12 0.12 0.04" rgba="0.72 0.59 0.43 1"/>
+        <geom name="gap_boxes_rough" class="terrain" pos="13.1 0 0" size="0.20 1.5 0.05" rgba="0.42 0.42 0.42 1"/>
 
-        <!-- boxes, denser but kept moderate to avoid getting stuck -->
-        <geom name="boxes_floor" class="terrain" pos="11.5 0 -0.05" size="2.0 1.5 0.05" rgba="0.40 0.40 0.40 1"/>
-        <geom name="boxes_1" class="terrain" pos="9.95 -0.72 0.025" size="0.16 0.16 0.025" rgba="0.70 0.58 0.42 1"/>
-        <geom name="boxes_2" class="terrain" pos="10.28 0.62 0.04" size="0.18 0.18 0.04" rgba="0.72 0.59 0.43 1"/>
-        <geom name="boxes_3" class="terrain" pos="10.62 -0.15 0.055" size="0.22 0.26 0.055" rgba="0.74 0.61 0.45 1"/>
-        <geom name="boxes_4" class="terrain" pos="10.98 0.78 0.07" size="0.16 0.16 0.07" rgba="0.76 0.62 0.46 1"/>
-        <geom name="boxes_5" class="terrain" pos="11.35 -0.62 0.085" size="0.20 0.20 0.085" rgba="0.78 0.64 0.48 1"/>
-        <geom name="boxes_6" class="terrain" pos="11.72 0.12 0.095" size="0.24 0.28 0.095" rgba="0.80 0.65 0.49 1"/>
-        <geom name="boxes_7" class="terrain" pos="12.08 0.72 0.08" size="0.18 0.18 0.08" rgba="0.82 0.66 0.50 1"/>
-        <geom name="boxes_8" class="terrain" pos="12.42 -0.05 0.11" size="0.26 0.32 0.11" rgba="0.84 0.68 0.52 1"/>
-        <geom name="boxes_9" class="terrain" pos="12.78 -0.68 0.075" size="0.18 0.18 0.075" rgba="0.78 0.63 0.47 1"/>
-        <geom name="boxes_10" class="terrain" pos="13.12 0.52 0.09" size="0.16 0.16 0.09" rgba="0.74 0.61 0.45 1"/>
+        <!-- random_rough -->
+        <geom name="rough_floor" class="terrain" pos="15.3 0 0" size="2.0 1.5 0.05" rgba="0.45 0.45 0.45 1"/>
+        <geom name="rough_01" class="terrain" pos="13.425 -0.75 0.015" size="0.125 0.45 0.015" rgba="0.46 0.46 0.46 1"/>
+        <geom name="rough_02" class="terrain" pos="13.675 0.65 0.05" size="0.125 0.55 0.05" rgba="0.48 0.48 0.48 1"/>
+        <geom name="rough_03" class="terrain" pos="13.925 -0.15 0.085" size="0.125 0.75 0.085" rgba="0.50 0.50 0.50 1"/>
+        <geom name="rough_04" class="terrain" pos="14.175 0.78 0.125" size="0.125 0.4 0.125" rgba="0.52 0.52 0.52 1"/>
+        <geom name="rough_05" class="terrain" pos="14.425 -0.68 0.06" size="0.125 0.5 0.06" rgba="0.49 0.49 0.49 1"/>
+        <geom name="rough_06" class="terrain" pos="14.675 0.1 0.145" size="0.125 0.8 0.145" rgba="0.54 0.54 0.54 1"/>
+        <geom name="rough_07" class="terrain" pos="14.925 0.82 0.03" size="0.125 0.38 0.03" rgba="0.47 0.47 0.47 1"/>
+        <geom name="rough_08" class="terrain" pos="15.175 -0.3 0.1" size="0.125 0.72 0.1" rgba="0.51 0.51 0.51 1"/>
+        <geom name="rough_09" class="terrain" pos="15.425 0.68 0.055" size="0.125 0.48 0.055" rgba="0.49 0.49 0.49 1"/>
+        <geom name="rough_10" class="terrain" pos="15.675 -0.72 0.13" size="0.125 0.44 0.13" rgba="0.52 0.52 0.52 1"/>
+        <geom name="rough_11" class="terrain" pos="15.925 0.18 0.025" size="0.125 0.82 0.025" rgba="0.46 0.46 0.46 1"/>
+        <geom name="rough_12" class="terrain" pos="16.175 -0.62 0.15" size="0.125 0.52 0.15" rgba="0.53 0.53 0.53 1"/>
+        <geom name="rough_13" class="terrain" pos="16.425 0.74 0.075" size="0.125 0.42 0.075" rgba="0.50 0.50 0.50 1"/>
+        <geom name="rough_14" class="terrain" pos="16.675 -0.05 0.12" size="0.125 0.78 0.12" rgba="0.52 0.52 0.52 1"/>
+        <geom name="rough_15" class="terrain" pos="16.925 0.62 0.04" size="0.125 0.5 0.04" rgba="0.48 0.48 0.48 1"/>
+        <geom name="rough_16" class="terrain" pos="17.175 -0.7 0.095" size="0.125 0.46 0.095" rgba="0.51 0.51 0.51 1"/>
+        <geom name="gap_rough_hf" class="terrain" pos="17.5 0 0" size="0.20 1.5 0.05" rgba="0.42 0.42 0.42 1"/>
 
-        <!-- random_rough, stronger amplitude with lateral variation -->
-        <geom name="rough_floor" class="terrain" pos="15.5 0 -0.05" size="2.0 1.5 0.05" rgba="0.45 0.45 0.45 1"/>
-        <geom name="rough_01" class="terrain" pos="13.625 -0.75 0.015" size="0.125 0.45 0.015" rgba="0.46 0.46 0.46 1"/>
-        <geom name="rough_02" class="terrain" pos="13.875 0.65 0.05" size="0.125 0.55 0.05" rgba="0.48 0.48 0.48 1"/>
-        <geom name="rough_03" class="terrain" pos="14.125 -0.15 0.085" size="0.125 0.75 0.085" rgba="0.50 0.50 0.50 1"/>
-        <geom name="rough_04" class="terrain" pos="14.375 0.78 0.125" size="0.125 0.40 0.125" rgba="0.52 0.52 0.52 1"/>
-        <geom name="rough_05" class="terrain" pos="14.625 -0.68 0.06" size="0.125 0.50 0.06" rgba="0.49 0.49 0.49 1"/>
-        <geom name="rough_06" class="terrain" pos="14.875 0.10 0.145" size="0.125 0.80 0.145" rgba="0.54 0.54 0.54 1"/>
-        <geom name="rough_07" class="terrain" pos="15.125 0.82 0.03" size="0.125 0.38 0.03" rgba="0.47 0.47 0.47 1"/>
-        <geom name="rough_08" class="terrain" pos="15.375 -0.30 0.10" size="0.125 0.72 0.10" rgba="0.51 0.51 0.51 1"/>
-        <geom name="rough_09" class="terrain" pos="15.625 0.68 0.055" size="0.125 0.48 0.055" rgba="0.49 0.49 0.49 1"/>
-        <geom name="rough_10" class="terrain" pos="15.875 -0.72 0.13" size="0.125 0.44 0.13" rgba="0.52 0.52 0.52 1"/>
-        <geom name="rough_11" class="terrain" pos="16.125 0.18 0.025" size="0.125 0.82 0.025" rgba="0.46 0.46 0.46 1"/>
-        <geom name="rough_12" class="terrain" pos="16.375 -0.62 0.15" size="0.125 0.52 0.15" rgba="0.53 0.53 0.53 1"/>
-        <geom name="rough_13" class="terrain" pos="16.625 0.74 0.075" size="0.125 0.42 0.075" rgba="0.50 0.50 0.50 1"/>
-        <geom name="rough_14" class="terrain" pos="16.875 -0.05 0.12" size="0.125 0.78 0.12" rgba="0.52 0.52 0.52 1"/>
-        <geom name="rough_15" class="terrain" pos="17.125 0.62 0.04" size="0.125 0.50 0.04" rgba="0.48 0.48 0.48 1"/>
-        <geom name="rough_16" class="terrain" pos="17.375 -0.70 0.095" size="0.125 0.46 0.095" rgba="0.51 0.51 0.51 1"/>
+        <!-- hf_pyramid_slope, longer, steeper, peak 0.5 -->
+        <geom name="hf_pyramid_slope_01" class="terrain" pos="17.775 0 0.025" size="0.075 1.5 0.025" rgba="0.57 0.57 0.57 1"/>
+        <geom name="hf_pyramid_slope_02" class="terrain" pos="17.925 0 0.05" size="0.075 1.5 0.05" rgba="0.58 0.58 0.58 1"/>
+        <geom name="hf_pyramid_slope_03" class="terrain" pos="18.075 0 0.075" size="0.075 1.5 0.075" rgba="0.59 0.59 0.59 1"/>
+        <geom name="hf_pyramid_slope_04" class="terrain" pos="18.225 0 0.1" size="0.075 1.5 0.1" rgba="0.6 0.6 0.6 1"/>
+        <geom name="hf_pyramid_slope_05" class="terrain" pos="18.375 0 0.125" size="0.075 1.5 0.125" rgba="0.61 0.61 0.61 1"/>
+        <geom name="hf_pyramid_slope_06" class="terrain" pos="18.525 0 0.15" size="0.075 1.5 0.15" rgba="0.62 0.62 0.62 1"/>
+        <geom name="hf_pyramid_slope_07" class="terrain" pos="18.675 0 0.175" size="0.075 1.5 0.175" rgba="0.63 0.63 0.63 1"/>
+        <geom name="hf_pyramid_slope_08" class="terrain" pos="18.825 0 0.2" size="0.075 1.5 0.2" rgba="0.64 0.64 0.64 1"/>
+        <geom name="hf_pyramid_slope_09" class="terrain" pos="18.975 0 0.225" size="0.075 1.5 0.225" rgba="0.65 0.65 0.65 1"/>
+        <geom name="hf_pyramid_slope_10" class="terrain" pos="19.125 0 0.25" size="0.075 1.5 0.25" rgba="0.66 0.66 0.66 1"/>
+        <geom name="hf_pyramid_slope_11" class="terrain" pos="19.275 0 0.25" size="0.075 1.5 0.25" rgba="0.66 0.66 0.66 1"/>
+        <geom name="hf_pyramid_slope_12" class="terrain" pos="19.425 0 0.225" size="0.075 1.5 0.225" rgba="0.65 0.65 0.65 1"/>
+        <geom name="hf_pyramid_slope_13" class="terrain" pos="19.575 0 0.2" size="0.075 1.5 0.2" rgba="0.64 0.64 0.64 1"/>
+        <geom name="hf_pyramid_slope_14" class="terrain" pos="19.725 0 0.175" size="0.075 1.5 0.175" rgba="0.63 0.63 0.63 1"/>
+        <geom name="hf_pyramid_slope_15" class="terrain" pos="19.875 0 0.15" size="0.075 1.5 0.15" rgba="0.62 0.62 0.62 1"/>
+        <geom name="hf_pyramid_slope_16" class="terrain" pos="20.025 0 0.125" size="0.075 1.5 0.125" rgba="0.61 0.61 0.61 1"/>
+        <geom name="hf_pyramid_slope_17" class="terrain" pos="20.175 0 0.1" size="0.075 1.5 0.1" rgba="0.6 0.6 0.6 1"/>
+        <geom name="hf_pyramid_slope_18" class="terrain" pos="20.325 0 0.075" size="0.075 1.5 0.075" rgba="0.59 0.59 0.59 1"/>
+        <geom name="hf_pyramid_slope_19" class="terrain" pos="20.475 0 0.05" size="0.075 1.5 0.05" rgba="0.58 0.58 0.58 1"/>
+        <geom name="hf_pyramid_slope_20" class="terrain" pos="20.625 0 0.025" size="0.075 1.5 0.025" rgba="0.57 0.57 0.57 1"/>
+        <geom name="gap_hf_hf_inv" class="terrain" pos="20.9 0 0" size="0.20 1.5 0.05" rgba="0.42 0.42 0.42 1"/>
 
-        <!-- hf_pyramid_slope, steeper -->
-        <geom name="hf_pyramid_slope_01" class="terrain" pos="17.55 0 0.011" size="0.05 1.5 0.011" rgba="0.57 0.57 0.57 1"/>
-        <geom name="hf_pyramid_slope_02" class="terrain" pos="17.65 0 0.022" size="0.05 1.5 0.022" rgba="0.58 0.58 0.58 1"/>
-        <geom name="hf_pyramid_slope_03" class="terrain" pos="17.75 0 0.033" size="0.05 1.5 0.033" rgba="0.59 0.59 0.59 1"/>
-        <geom name="hf_pyramid_slope_04" class="terrain" pos="17.85 0 0.044" size="0.05 1.5 0.044" rgba="0.60 0.60 0.60 1"/>
-        <geom name="hf_pyramid_slope_05" class="terrain" pos="17.95 0 0.055" size="0.05 1.5 0.055" rgba="0.61 0.61 0.61 1"/>
-        <geom name="hf_pyramid_slope_06" class="terrain" pos="18.05 0 0.066" size="0.05 1.5 0.066" rgba="0.62 0.62 0.62 1"/>
-        <geom name="hf_pyramid_slope_07" class="terrain" pos="18.15 0 0.077" size="0.05 1.5 0.077" rgba="0.63 0.63 0.63 1"/>
-        <geom name="hf_pyramid_slope_08" class="terrain" pos="18.25 0 0.088" size="0.05 1.5 0.088" rgba="0.64 0.64 0.64 1"/>
-        <geom name="hf_pyramid_slope_09" class="terrain" pos="18.35 0 0.099" size="0.05 1.5 0.099" rgba="0.65 0.65 0.65 1"/>
-        <geom name="hf_pyramid_slope_10" class="terrain" pos="18.45 0 0.11" size="0.05 1.5 0.11" rgba="0.66 0.66 0.66 1"/>
-        <geom name="hf_pyramid_slope_11" class="terrain" pos="18.55 0 0.11" size="0.05 1.5 0.11" rgba="0.66 0.66 0.66 1"/>
-        <geom name="hf_pyramid_slope_12" class="terrain" pos="18.65 0 0.099" size="0.05 1.5 0.099" rgba="0.65 0.65 0.65 1"/>
-        <geom name="hf_pyramid_slope_13" class="terrain" pos="18.75 0 0.088" size="0.05 1.5 0.088" rgba="0.64 0.64 0.64 1"/>
-        <geom name="hf_pyramid_slope_14" class="terrain" pos="18.85 0 0.077" size="0.05 1.5 0.077" rgba="0.63 0.63 0.63 1"/>
-        <geom name="hf_pyramid_slope_15" class="terrain" pos="18.95 0 0.066" size="0.05 1.5 0.066" rgba="0.62 0.62 0.62 1"/>
-        <geom name="hf_pyramid_slope_16" class="terrain" pos="19.05 0 0.055" size="0.05 1.5 0.055" rgba="0.61 0.61 0.61 1"/>
-        <geom name="hf_pyramid_slope_17" class="terrain" pos="19.15 0 0.044" size="0.05 1.5 0.044" rgba="0.60 0.60 0.60 1"/>
-        <geom name="hf_pyramid_slope_18" class="terrain" pos="19.25 0 0.033" size="0.05 1.5 0.033" rgba="0.59 0.59 0.59 1"/>
-        <geom name="hf_pyramid_slope_19" class="terrain" pos="19.35 0 0.022" size="0.05 1.5 0.022" rgba="0.58 0.58 0.58 1"/>
-        <geom name="hf_pyramid_slope_20" class="terrain" pos="19.45 0 0.011" size="0.05 1.5 0.011" rgba="0.57 0.57 0.57 1"/>
+        <!-- hf_pyramid_slope_inv, same peak and length -->
+        <geom name="hf_pyramid_slope_inv_01" class="terrain" pos="21.175 0 0.025" size="0.075 1.5 0.025" rgba="0.43 0.43 0.43 1"/>
+        <geom name="hf_pyramid_slope_inv_02" class="terrain" pos="21.325 0 0.05" size="0.075 1.5 0.05" rgba="0.42 0.42 0.42 1"/>
+        <geom name="hf_pyramid_slope_inv_03" class="terrain" pos="21.475 0 0.075" size="0.075 1.5 0.075" rgba="0.41 0.41 0.41 1"/>
+        <geom name="hf_pyramid_slope_inv_04" class="terrain" pos="21.625 0 0.1" size="0.075 1.5 0.1" rgba="0.4 0.4 0.4 1"/>
+        <geom name="hf_pyramid_slope_inv_05" class="terrain" pos="21.775 0 0.125" size="0.075 1.5 0.125" rgba="0.39 0.39 0.39 1"/>
+        <geom name="hf_pyramid_slope_inv_06" class="terrain" pos="21.925 0 0.15" size="0.075 1.5 0.15" rgba="0.38 0.38 0.38 1"/>
+        <geom name="hf_pyramid_slope_inv_07" class="terrain" pos="22.075 0 0.175" size="0.075 1.5 0.175" rgba="0.37 0.37 0.37 1"/>
+        <geom name="hf_pyramid_slope_inv_08" class="terrain" pos="22.225 0 0.2" size="0.075 1.5 0.2" rgba="0.36 0.36 0.36 1"/>
+        <geom name="hf_pyramid_slope_inv_09" class="terrain" pos="22.375 0 0.225" size="0.075 1.5 0.225" rgba="0.35 0.35 0.35 1"/>
+        <geom name="hf_pyramid_slope_inv_10" class="terrain" pos="22.525 0 0.25" size="0.075 1.5 0.25" rgba="0.34 0.34 0.34 1"/>
+        <geom name="hf_pyramid_slope_inv_11" class="terrain" pos="22.675 0 0.25" size="0.075 1.5 0.25" rgba="0.34 0.34 0.34 1"/>
+        <geom name="hf_pyramid_slope_inv_12" class="terrain" pos="22.825 0 0.225" size="0.075 1.5 0.225" rgba="0.35 0.35 0.35 1"/>
+        <geom name="hf_pyramid_slope_inv_13" class="terrain" pos="22.975 0 0.2" size="0.075 1.5 0.2" rgba="0.36 0.36 0.36 1"/>
+        <geom name="hf_pyramid_slope_inv_14" class="terrain" pos="23.125 0 0.175" size="0.075 1.5 0.175" rgba="0.37 0.37 0.37 1"/>
+        <geom name="hf_pyramid_slope_inv_15" class="terrain" pos="23.275 0 0.15" size="0.075 1.5 0.15" rgba="0.38 0.38 0.38 1"/>
+        <geom name="hf_pyramid_slope_inv_16" class="terrain" pos="23.425 0 0.125" size="0.075 1.5 0.125" rgba="0.39 0.39 0.39 1"/>
+        <geom name="hf_pyramid_slope_inv_17" class="terrain" pos="23.575 0 0.1" size="0.075 1.5 0.1" rgba="0.4 0.4 0.4 1"/>
+        <geom name="hf_pyramid_slope_inv_18" class="terrain" pos="23.725 0 0.075" size="0.075 1.5 0.075" rgba="0.41 0.41 0.41 1"/>
+        <geom name="hf_pyramid_slope_inv_19" class="terrain" pos="23.875 0 0.05" size="0.075 1.5 0.05" rgba="0.42 0.42 0.42 1"/>
+        <geom name="hf_pyramid_slope_inv_20" class="terrain" pos="24.025 0 0.025" size="0.075 1.5 0.025" rgba="0.43 0.43 0.43 1"/>
+        <geom name="gap_hf_inv_slope" class="terrain" pos="24.3 0 0" size="0.20 1.5 0.05" rgba="0.42 0.42 0.42 1"/>
 
-        <!-- hf_pyramid_slope_inv, steeper and non-sinking -->
-        <geom name="hf_pyramid_slope_inv_01" class="terrain" pos="19.55 0 0.010" size="0.05 1.5 0.010" rgba="0.43 0.43 0.43 1"/>
-        <geom name="hf_pyramid_slope_inv_02" class="terrain" pos="19.65 0 0.020" size="0.05 1.5 0.020" rgba="0.42 0.42 0.42 1"/>
-        <geom name="hf_pyramid_slope_inv_03" class="terrain" pos="19.75 0 0.030" size="0.05 1.5 0.030" rgba="0.41 0.41 0.41 1"/>
-        <geom name="hf_pyramid_slope_inv_04" class="terrain" pos="19.85 0 0.040" size="0.05 1.5 0.040" rgba="0.40 0.40 0.40 1"/>
-        <geom name="hf_pyramid_slope_inv_05" class="terrain" pos="19.95 0 0.050" size="0.05 1.5 0.050" rgba="0.39 0.39 0.39 1"/>
-        <geom name="hf_pyramid_slope_inv_06" class="terrain" pos="20.05 0 0.060" size="0.05 1.5 0.060" rgba="0.38 0.38 0.38 1"/>
-        <geom name="hf_pyramid_slope_inv_07" class="terrain" pos="20.15 0 0.072" size="0.05 1.5 0.072" rgba="0.37 0.37 0.37 1"/>
-        <geom name="hf_pyramid_slope_inv_08" class="terrain" pos="20.25 0 0.084" size="0.05 1.5 0.084" rgba="0.36 0.36 0.36 1"/>
-        <geom name="hf_pyramid_slope_inv_09" class="terrain" pos="20.35 0 0.096" size="0.05 1.5 0.096" rgba="0.35 0.35 0.35 1"/>
-        <geom name="hf_pyramid_slope_inv_10" class="terrain" pos="20.45 0 0.108" size="0.05 1.5 0.108" rgba="0.34 0.34 0.34 1"/>
-        <geom name="hf_pyramid_slope_inv_11" class="terrain" pos="20.55 0 0.108" size="0.05 1.5 0.108" rgba="0.34 0.34 0.34 1"/>
-        <geom name="hf_pyramid_slope_inv_12" class="terrain" pos="20.65 0 0.096" size="0.05 1.5 0.096" rgba="0.35 0.35 0.35 1"/>
-        <geom name="hf_pyramid_slope_inv_13" class="terrain" pos="20.75 0 0.084" size="0.05 1.5 0.084" rgba="0.36 0.36 0.36 1"/>
-        <geom name="hf_pyramid_slope_inv_14" class="terrain" pos="20.85 0 0.072" size="0.05 1.5 0.072" rgba="0.37 0.37 0.37 1"/>
-        <geom name="hf_pyramid_slope_inv_15" class="terrain" pos="20.95 0 0.060" size="0.05 1.5 0.060" rgba="0.38 0.38 0.38 1"/>
-        <geom name="hf_pyramid_slope_inv_16" class="terrain" pos="21.05 0 0.050" size="0.05 1.5 0.050" rgba="0.39 0.39 0.39 1"/>
-        <geom name="hf_pyramid_slope_inv_17" class="terrain" pos="21.15 0 0.040" size="0.05 1.5 0.040" rgba="0.40 0.40 0.40 1"/>
-        <geom name="hf_pyramid_slope_inv_18" class="terrain" pos="21.25 0 0.030" size="0.05 1.5 0.030" rgba="0.41 0.41 0.41 1"/>
-        <geom name="hf_pyramid_slope_inv_19" class="terrain" pos="21.35 0 0.020" size="0.05 1.5 0.020" rgba="0.42 0.42 0.42 1"/>
-        <geom name="hf_pyramid_slope_inv_20" class="terrain" pos="21.45 0 0.010" size="0.05 1.5 0.010" rgba="0.43 0.43 0.43 1"/>
+        <!-- 20 degree ramp, length doubled and connected, radians -->
+        <geom name="slope20_up" class="terrain" pos="25.8224 0 0.46" size="1.4 1.5 0.02" euler="0 -0.349066 0" rgba="0.68 0.68 0.68 1"/>
+        <geom name="slope20_top" class="terrain" pos="27.5311 0 0.9377" size="0.4 1.5 0.02" rgba="0.62 0.62 0.62 1"/>
+        <geom name="slope20_down" class="terrain" pos="29.2399 0 0.46" size="1.4 1.5 0.02" euler="0 0.349066 0" rgba="0.68 0.68 0.68 1"/>
 
-        <geom name="end_pad" class="terrain" pos="22.25 0 -0.05" size="0.75 1.5 0.05" rgba="0.36 0.36 0.36 1"/>
+        <geom name="end_pad" class="terrain" pos="30.96 0 0" size="0.4 1.5 0.05" rgba="0.36 0.36 0.36 1"/>
     </worldbody>
 </mujoco>
