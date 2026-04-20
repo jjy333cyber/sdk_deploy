@@ -62,10 +62,11 @@ public:
     M20Interface(const std::string &robot_name) : DdsInterface(robot_name, 16) {
         battery_data_.resize(2 * BATTERY_DATA_SIZE);
 
-        float init_pos_offset[16] = {-25, -131, 160, 0.,
-                                     25, -131, 160, 0,
-                                     -25, 131, -160, 0,
-                                     25, 131, -160, 0};
+        // Keep the real-robot DDS calibration consistent with the MuJoCo bridge.
+        float init_pos_offset[16] = {-25, 229, 160, 0.,
+                                     25, -131, -200, 0,
+                                     -25, -229, -160, 0,
+                                     25, 131, 200, 0};
         float joint_dir[16] = {1, 1, -1, 1,
                                1, -1, 1, -1,
                                -1, 1, -1, 1.,
